@@ -30,7 +30,7 @@ async function main() {
 
         const sleepSeconds = Math.floor(Math.random() * 40) + 1;
         console.log(`等待 ${sleepSeconds} 秒后进行下一次循环`);
-        await sleep(sleepSeconds * 1000);
+        await sleep(sleepSeconds * 500);
     }
 }
 
