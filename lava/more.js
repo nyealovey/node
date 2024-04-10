@@ -8,12 +8,14 @@ async function main() {
         "3",
         "4",
         "5",
+        "4",
+        "5",
         "6"
     ];
 
     // 每次循环生成不同数量的地址并进行查询
     for (let batch = 1; batch <= 5000000; batch++) {
-        const numAddresses = Math.floor(Math.random() * 30) + 1; // 在循环内部定义numAddresses
+        const numAddresses = Math.floor(Math.random() * 5) + 1; // 在循环内部定义numAddresses
         const rpcUrl = getRandomRpcUrl(rpcUrls);
         console.log(`批次 ${batch}: 查询 ${numAddresses} 个地址的余额，使用RPC: ${rpcUrl}`);
         const addresses = Array.from({ length: numAddresses }, () => ethers.Wallet.createRandom().address);
