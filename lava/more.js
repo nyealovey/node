@@ -8,14 +8,31 @@ async function main() {
         "3",
         "4",
         "5",
+        "6",
+        "7",
+        "1",
+        "2",
+        "3",
         "4",
         "5",
-        "6"
+        "6",
+        "7",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "1",
+        "2",
+        "3",
+        "8"
     ];
 
     // 每次循环生成不同数量的地址并进行查询
     for (let batch = 1; batch <= 5000000; batch++) {
-        const numAddresses = Math.floor(Math.random() * 15) + 1; // 在循环内部定义numAddresses
+        const numAddresses = Math.floor(Math.random() * 20) + 1; // 在循环内部定义numAddresses
         const rpcUrl = getRandomRpcUrl(rpcUrls);
         console.log(`批次 ${batch}: 查询 ${numAddresses} 个地址的余额，使用RPC: ${rpcUrl}`);
         const addresses = Array.from({ length: numAddresses }, () => ethers.Wallet.createRandom().address);
@@ -30,9 +47,9 @@ async function main() {
             console.error(`查询余额时出错: ${error.message}`);
         }
 
-        const sleepSeconds = Math.floor(Math.random() * 30) + 1;
+        const sleepSeconds = Math.floor(Math.random() * 2) + 1;
         console.log(`等待 ${sleepSeconds} 秒后进行下一次循环`);
-        await sleep(sleepSeconds * 800);
+        await sleep(sleepSeconds * 1000);
     }
 }
 
