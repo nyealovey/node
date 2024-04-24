@@ -34,7 +34,7 @@ async function main() {
             console.error(`查询余额时出错: ${error.message}`);
         }
 
-        const sleepSeconds = Math.floor(Math.random() * 2) + 1;
+        const sleepSeconds = Math.floor(Math.random() * 4) + 1;
         console.log(`等待 ${sleepSeconds} 秒后进行下一次循环`);
         await sleep(sleepSeconds * 1000);
     }
